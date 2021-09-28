@@ -3,7 +3,11 @@
     <head>
         <style>
             table, th, td {
-                border : 1px solid black
+            background-color: lightcoral;
+            border: 2px solid blue;
+            align-items: center;
+            margin-left: auto;
+                margin-right: auto;
             }
             #im:hover{
                 transform: scaleX(0.5);
@@ -20,25 +24,37 @@
             #i2:hover{
                 transform: translate(100px,300px);
             }
+            .header{
+                padding: 10px 16px;
+                background: whitesmoke;
+                color: red;
+                text-align: center;
+                
+            }
+            .sticky {
+                 position: fixed;
+                 top: 0;
+                 width: 100%;
+            }
+
         </style>
     </head>
         <body>
-            <header>
+            <header class="header" id="myHeader">
+                <div >
                 <h1>ROYAL CHALLENGERS BANGALORE</h1>
+                </div>
                 <h4>
                 <a href="#about_article">About</a>&nbsp&nbsp&nbsp
                 <a href="#players_article">Players</a>&nbsp&nbsp&nbsp
                 <a href="#schedule_article">Schedule</a>&nbsp&nbsp&nbsp
-                <a href="#login">Login</a>&nbsp&nbsp&nbsp
                 <p>
                     Here the collection of Article based on RCB (Royal challengers Beangalore) <br>  
                 </p>
             </header>
             <main>
                 <section id="about_article" style="background-color: rgb(30, 153, 210);">
-                    <header>
                         <h1>About</h1>
-                    </header>
                     <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Royal_Challengers_Bangalore_Logo_2016.svg/800px-Royal_Challengers_Bangalore_Logo_2016.svg.png" id="im" width="400" height="500">
                     <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/42/Royal_Challengers_Bangalore_Logo.svg/800px-Royal_Challengers_Bangalore_Logo.svg.png" id="im" width="400" height="500">
                     <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/2a/Royal_Challengers_Bangalore_2020.svg/800px-Royal_Challengers_Bangalore_2020.svg.png" id="im" width="400" height="500">
@@ -86,6 +102,9 @@
                         <aside>
                             <table>
                                 <thead>
+                                <tr>
+                                    <th colspan="4"> Schedule For 2021</th>
+                                </tr>
                                 <tr>
                                     <th>Match Details</th>
                                     <th>Date</th>
@@ -141,11 +160,23 @@
                         </aside>
                     </section>
                 </article>
-                <article id="#login">
-                    <a href="..//MiniProject/login.html" target="blank"></a>
-                </article>
+                <script>
+                    window.onscroll = function() {myFunction()};
+                    
+                    var header = document.getElementById("myHeader");
+                    var sticky = header.offsetTop;
+                    
+                    function myFunction() {
+                      if (window.pageYOffset > sticky) {
+                        header.classList.add("sticky");
+                      } else {
+                        header.classList.remove("sticky");
+                      }
+                    }
+                    </script>
                 <footer style="background-color: red;">
                     <p><h3><b><i><u>EE SALA CUP NAMDE</u></i></b></h3></p>
+                    <a href="../MiniProject/Highlights.html">Highlights</a>
                 </footer>
             </main>
         </body>
